@@ -1,0 +1,23 @@
+{
+  "name": "main_portfolio",
+  "version": "1.0.0",
+  "description": "Tims Portfolio",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "node-sass -w scss/ -o Main/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdvoisic/My-Portfolio.git"
+  },
+  "author": "Timothy Voisich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tdvoisic/My-Portfolio/issues"
+  },
+  "homepage": "https://github.com/tdvoisic/My-Portfolio#readme"
+}
