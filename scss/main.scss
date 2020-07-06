@@ -6,7 +6,7 @@ $home_image: url("../images/back3.jpg");
 $background_opacity: 0.8;
 
 @mixin easeOut{
-  transition: all 0.5s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 @mixin mediaSm{
@@ -99,6 +99,10 @@ header{
 .text-secondary{
   color: $secondary_color
 
+}
+
+.text-secondary-main{
+  color: lighten($secondary_color, 4);
 }
 
 main{
@@ -273,15 +277,25 @@ main{
 
 
 
+//ABOUT ME section
 
+@keyframes animate {
+  0%, 100%{
+    transform: translateY(-2px);
+  }
+  50%{
+    transform: translateY(2px);
+  }
+
+}
 
 .about-info{
   display: grid;
   grid-gap: 30px;
   grid-template-areas:
-  'bioimage bio bio'
-  'job1 job2 job3';
+  'bioimage bio bio';
   grid-template-columns: repeat(3, 1fr);
+  
 
 
   .bio-image{
@@ -292,6 +306,7 @@ main{
     margin: auto;
     border-radius: 50%;
     border: $secondary_color 5px solid;
+
   }
 
   .bio{
@@ -299,6 +314,22 @@ main{
     font-size: 1.5rem;
   }
 
+
+  // .job-3{
+  //   grid-area: job3;
+  // }
+
+
+
+}
+
+.experience-section{
+  margin-top: 10px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+  'job1 job1 job2 job2';
+  grid-template-columns: repeat(4, 1fr);
   .job-1{
     grid-area: job1;
   }
@@ -306,16 +337,12 @@ main{
   .job-2{
     grid-area: job2;
   }
-
-  .job-3{
-    grid-area: job3;
-  }
-
   .job{
     background: lighten($primary_color, 5);
     padding: 0.5rem;
     border-bottom: $secondary_color 5px solid;
   }
+
 
 }
 
@@ -336,6 +363,13 @@ main{
       @include easeOut;
     }
   }
+}
+
+//RESUME PAGE
+
+.resume-container{
+  padding: 5px;
+
 }
 
 //CONTACT PAGE
@@ -464,12 +498,17 @@ main{
     grid-template-areas:
     'bioimage'
     'bio'
-    'job1'
-    'job2'
-    'job3';
+    ;
 
     grid-template-columns: 1fr;
 
+  }
+
+  .experience-section{
+    grid-template-areas:
+    'job1'
+    'job2';
+    grid-template-columns: 1fr;
   }
 
   .projects{
