@@ -198,13 +198,35 @@ main {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(3, 1fr); }
-  .projects img {
-    width: 100%;
-    border: 3px #fff solid; }
-    .projects img:hover {
+  .projects .textImage {
+    width: 500px;
+    height: 250px;
+    border: 3px #fff solid;
+    overflow: hidden; }
+    .projects .textImage img {
+      object-fit: contain;
+      width: 112%;
+      height: 100%; }
+    .projects .textImage:hover img {
       opacity: 0.5;
       border-color: #36648B;
+      transform: scale(1.1);
+      filter: blur(3px) brightness(60%);
       transition: all 0.4s ease-out; }
+  .projects .textImage :not(img) {
+    position: absolute;
+    top: 40%;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    z-index: 1;
+    opacity: 0; }
+  .projects .textImage:hover :not(img) {
+    opacity: 1;
+    transition: all 0.4s ease-out; }
+  .projects .textImage h5 {
+    top: 42%;
+    text-align: center; }
 
 .resume-container {
   padding: 5px; }
